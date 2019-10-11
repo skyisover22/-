@@ -1,19 +1,10 @@
 #include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+#include &quot;askname.h&quot;
 int main(int argc, char **argv)
 {
-printf("Enter your name: ");
-fgets(name, 255, stdin);
-name[strlen(name)-1] = '\0'; /* remove the newline at the end */
-printf("Enter your first name: ");
-fgets(first, 255, stdin);
-first[strlen(first)-1] = '\0'; /* remove the newline at the end */
+char first[255], last[255];
+askname(first, last);
 
-printf("Hello, %s!\n", name);
-return 0;
-printf("Now enter your last name: ");
-gets(last); /* buffer overflow? what's that? */
-
-printf("Hello %s %s!\n", first, last);
+printf(&quot;Hello, %s %s!\n&quot;, first, last);
 return 0;
 }
